@@ -1,5 +1,10 @@
-/**
+/** MagnumOpus.java
+ * A class that draws a recursive pattern that I created.
+ * The recursive pattern that I drew was several spirals
+ * that all converge at one point.
  *
+ * @author Noah Ruderman
+ * @since 2/10/2023
  */
 
 import java.awt.*;
@@ -13,9 +18,7 @@ public class MagnumOpus {
         run.run();
     }
 
-    /**
-     *
-     */
+    /** The method that holds the infinite animation loop */
     public void run() {
         StdDraw.setCanvasSize(800, 800);
         StdDraw.enableDoubleBuffering();
@@ -38,8 +41,8 @@ public class MagnumOpus {
     }
 
     /**
-     *
-     * @param deltaAngle
+     * A method to draw the spiral
+     * @param deltaAngle the difference in angle to draw the spiral, the higher the angle, the more curvy it is.
      */
     private void drawSpiral(double deltaAngle) {
         StdDraw.clear(Color.black);
@@ -55,13 +58,13 @@ public class MagnumOpus {
     }
 
     /**
-     *
-     * @param x
-     * @param y
-     * @param angleDeg
-     * @param depth
-     * @param radius
-     * @param deltaAngle
+     * Recursively draws a leg of a spiral.
+     * @param x the current x position
+     * @param y the current y position
+     * @param angleDeg the angle at which it is being drawn at relative to the center
+     * @param depth recursion depth parameter
+     * @param radius the distance from the center of the spiral
+     * @param deltaAngle the change in angle to draw the leg
      */
     private void drawLeg(double x, double y, double angleDeg, int depth, double radius, double deltaAngle) {
         if (depth <= 0)
